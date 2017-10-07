@@ -15,6 +15,7 @@ std::string value_board =
   "   6 | 7 | 8  \n"
   "  -----------\n";
 std::cout << "Here is what the gameboard is like with the numbers corresponding to the spaces you can choose"<<std::endl;
+std::cout << "During the game you will put ! for wrong guesses and # for right guesses"<<std::endl;
 std::cout << value_board << std::endl;
 }
 
@@ -50,16 +51,22 @@ while (loop_controller){
 
   if (checklist[locator]==1){
     std::cout << "Hit!"<<std::endl;
+    myboard[locator] = "#";
+    std::cout << "-------------------" << std::endl;
+    std::cout << myboard[0] << "   |   " << myboard[1] << "   |   "<< myboard[2]<<std::endl;
+    std::cout << myboard[3] << "   |   " << myboard[4] << "   |   " << myboard[5]<<std::endl;
+    std::cout << myboard[6] << "   |   " << myboard[7] << "   |   " << myboard[8]<<std::endl;
+    std::cout << "-------------------"<< std::endl;
     loop_controller = false;
   }
   else{
     std::cout << "miss :/"<<std::endl;
-    myboard[locator] = "*";
-    std::cout << "-----------" << std::endl;
+    myboard[locator] = "!";
+    std::cout << "-------------------" << std::endl;
     std::cout << myboard[0] << "   |   " << myboard[1] << "   |   "<< myboard[2]<<std::endl;
     std::cout << myboard[3] << "   |   " << myboard[4] << "   |   " << myboard[5]<<std::endl;
     std::cout << myboard[6] << "   |   " << myboard[7] << "   |   " << myboard[8]<<std::endl;
-    std::cout << "-----------"<< std::endl;
+    std::cout << "-------------------"<< std::endl;
     //show the updated game board
     //if (locator = 1);
 
