@@ -29,7 +29,7 @@ for (int x = 0; x < 10; x++){
 
 // make a random integer to put in test "ship"
 srand(time(0));
-int randy = (rand() % 10);
+int randy = (rand() % 9);
 checklist[randy] = 1;
 
 
