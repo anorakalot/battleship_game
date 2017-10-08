@@ -1,3 +1,3 @@
-# Memory_game
-Memory game in development using only base c++ functions
+# battleship_game
+battleship game in development using only standard c++ functions (no third part libraries)
 
