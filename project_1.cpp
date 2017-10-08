@@ -129,7 +129,7 @@ for(int i = 0; i <10;i++ ){
     std::cout << "-------------------------------------------------------" << std::endl;
     //std::cout << "Heres the final point total: "<<points<<std::endl;
     if (myboard[randy_1]=="S" && myboard[randy_2]=="S"){
-      std::cout << "YOU WIN"<<std::endl;
+      std::cout << "YOU HAVE ELIMINATED ALL ENEMY SHIPS"<<std::endl;
       break;
       //loop_controller = false;
     }
@@ -179,13 +179,13 @@ for(int i = 0; i <10;i++ ){
 }//for loop end
 
 if ((myboard[randy_1]=="S") && (myboard[randy_2])=="S") {
-  std::cout << "Congratulations on winning!!! You are truly a master of SONAR technology"<<std::endl;
-  std::cout << "You are now know as HERO "<<name<<std::endl;
-  std::cout << ":)"<<std::endl;
+  std::cout << "YOU HAVE LED A SUCCESSFUL REBUTTAL OF THE ENEMY WATER INVASION"<<std::endl;
+  std::cout << "GENERAL "<<name <<"YOU WILL BE FOREVER KNOWN AS A HERO"<<std::endl;
+  std::cout << std::endl;
 }
 else{
-  std::cout << "You failed to protect the people you were supposed to"<<std::endl;
-  std::cout << ":( (in case you cant tell thats sad face jo being sad)"<<std::endl;
+  std::cout << "YOU FAILED TO PROTECT OUR PEOPLE"<<std::endl;
+  std::cout << "NOW WE HAVE NO HOPE"<<std::endl;
 }
 
 std::cout << "play again (Y or N)"<<std::endl;
