@@ -1,3 +1,3 @@
-# battleship_game
-Battleship game in development using only base c++ functions
+# minesweeper_game
+minesweeper game in development using only base c++ functions
 
