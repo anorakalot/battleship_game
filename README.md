@@ -1,3 +1,3 @@
 # battleship_game
-battleship game in development using only standard c++ functions (no third part libraries)
+Fully functional Battleship game where you try to hit two enemy ships using "sonar technology" before your number of turns is up.
 
