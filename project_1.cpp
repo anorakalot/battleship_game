@@ -7,6 +7,7 @@
 //developer notes chenge game to minsweeper make it so people try to get as much filled in before they hit
 //have hints when the thing is close to a "mine"
 
+//going to show the key values and the rules of the game
 void init_board_values(){
 std::string value_board =
   "  ---------------------------------------\n"
@@ -18,13 +19,15 @@ std::string value_board =
   "  ---------------------------------------\n"
   "   24 | 25 | 26 | 27 | 28 | 29 | 30 | 31 \n"
   "  ---------------------------------------\n";
+std::cout << value_board << std::endl;
 std::cout << std::endl <<std::endl;
 std::cout << "Here is the gameboard. The numbers correspond to the spaces you can choose"<<std::endl<<std::endl;
 std::cout << "During the game you will get S for hitting enemy ships and M for missed shots"<<std::endl<<std::endl;
 std::cout << "Hit the enemy ships in the turns provided or you lose"<<std::endl<<std::endl;
-std::cout << value_board << std::endl;
+
 }
 
+//this is going to show up whenever a players "turn" is done
 void board_values(){
 std::string value_board =
   "  ---------------------------------------\n"
@@ -40,32 +43,24 @@ std::cout << "               key of values"<<std::endl;
 std::cout << value_board << std::endl;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 int main(){
 //need placeholder string for cin
 std::cout << std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl
 <<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl
 <<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl
 <<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl;
-
 std::string name;
-std::cout <<"HELLO GENERAL WE NEED YOUR HELP MORE THAN EVER"<<std::endl;
-std::cout <<"WE ARE SURROUNDED BY ENEMY SHIPS AND WE NEED YOU TO FIND AND DESTROY THEM USING SONAR TECHNOLOGY!!!"<<std::endl;
-std::cout <<"IF YOU DONT ELIMINATE ALL THE ENEMY SHIPS DURING THE TIME LIMIT WE WILL BE OVERRUN"<<std::endl;
-std::cout << "GOOD LUCK GENERAL"<<std::endl;\
 std::cout << "ENTER YOUR NAME: ";
 std::cin >> name;
+std::cout << std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl
+<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl
+<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl
+<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl;
+std::cout <<"HELLO GENERAL WE NEED YOUR HELP MORE THAN EVER. PLEASE HELP OUR CAUSE THROUGH THIS TERMINAL"<<std::endl;
+std::cout <<"WE ARE SURROUNDED BY ENEMY SHIPS AND WE NEED YOU TO FIND AND DESTROY THEM USING SONAR TECHNOLOGY!!!"<<std::endl;
+std::cout <<"IF YOU DONT ELIMINATE ALL THE ENEMY SHIPS DURING THE TIME LIMIT WE WILL BE OVERRUN"<<std::endl;
+std::cout << "GOOD LUCK GENERAL "<<name<<std::endl;
+
 std::cout << std::endl;
 init_board_values();
 // initialize check list with all 0
@@ -130,11 +125,13 @@ for(int i = 0; i <10;i++ ){
     //std::cout << "Heres the final point total: "<<points<<std::endl;
     if (myboard[randy_1]=="S" && myboard[randy_2]=="S"){
       std::cout << "YOU HAVE ELIMINATED ALL ENEMY SHIPS"<<std::endl;
+      board_values();
       break;
       //loop_controller = false;
     }
     else{
       std::cout << "ONLY ONE SHIP REMAINS GENERAL "<<name<<std::endl;
+      board_values();
     }
   }//end of if player hit ship
   else{
