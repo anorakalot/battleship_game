@@ -24,7 +24,7 @@ std::cout << std::endl <<std::endl;
 std::cout << "Here is the gameboard. The numbers correspond to the spaces you can choose"<<std::endl<<std::endl;
 std::cout << "During the game you will get S for hitting enemy ships and M for missed shots"<<std::endl<<std::endl;
 std::cout << "Hit the enemy ships in the turns provided or you lose"<<std::endl<<std::endl;
-
+std::cout << "Sonar detects up down left right"<<std::endl;
 }
 
 //this is going to show up whenever a players "turn" is done
@@ -45,17 +45,23 @@ std::cout << value_board << std::endl;
 
 int main(){
 //need placeholder string for cin
-std::cout << std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl
-<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl
-<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl
-<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl;
+
+//for loops
+for (int x = 0; x < 100; ++x){
+  std::cout << std::endl;
+}
 std::string name;
 std::cout << "ENTER YOUR NAME: ";
 std::cin >> name;
-std::cout << std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl
-<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl
-<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl
-<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl<<std::endl;
+for(int x = 0; x<name.length(); ++x){
+  name[x] = toupper(name[x]);
+}
+
+//for loops
+for (int x = 0; x < 60; ++x){
+  std::cout << std::endl;
+}
+
 std::cout <<"HELLO GENERAL WE NEED YOUR HELP MORE THAN EVER. PLEASE HELP OUR CAUSE THROUGH THIS TERMINAL"<<std::endl;
 std::cout <<"WE ARE SURROUNDED BY ENEMY SHIPS AND WE NEED YOU TO FIND AND DESTROY THEM USING SONAR TECHNOLOGY!!!"<<std::endl;
 std::cout <<"IF YOU DONT ELIMINATE ALL THE ENEMY SHIPS DURING THE TIME LIMIT WE WILL BE OVERRUN"<<std::endl;
@@ -78,9 +84,17 @@ for (int x=0; x < 32;x++ ){
 
 // make 2 random integers to put into checklist
 //these are the enemy "ships"
+
+//for loops for randy1 and randy_2 to check if equeal
 srand(time(0));
-int randy_1 = (rand() % 16);
-int randy_2 = (rand() % 32+16);
+int randy_1 = (rand() % 32);
+int randy_2 = (rand() % 32);
+
+while(randy_1 == randy_2){
+  srand(time(0));
+  int randy_1 = (rand() % 32);
+  int randy_2 = (rand() % 32);
+}
 checklist[randy_1] = 1;
 checklist[randy_2] = 1;
 
@@ -99,7 +113,8 @@ for(int i = 0; i <10;i++ ){
   std::cin >> locator;
   //check if locator is to high
   if (locator>31){
-    std::cout << "VALUE IS TOO HIGH GENERAL"<<std::endl;
+    std::cout << "VALUE IS TOO HIGH GENERAL "<< name <<std::endl;
+    board_values();
     continue;
   }
   else{
@@ -137,6 +152,7 @@ for(int i = 0; i <10;i++ ){
   else{
     if (myboard[locator] == "M"){
       std::cout << "NO REPEAT VALUES"<<std::endl;
+      board_values();
       continue;//checks if locator value has been used before
     }
     std::cout << "MISS!"<<std::endl<<std::endl;
@@ -177,7 +193,7 @@ for(int i = 0; i <10;i++ ){
 
 if ((myboard[randy_1]=="S") && (myboard[randy_2])=="S") {
   std::cout << "YOU HAVE LED A SUCCESSFUL REBUTTAL OF THE ENEMY WATER INVASION"<<std::endl;
-  std::cout << "GENERAL "<<name <<"YOU WILL BE FOREVER KNOWN AS A HERO"<<std::endl;
+  std::cout << "GENERAL "<<name <<" YOU WILL BE FOREVER KNOWN AS A HERO"<<std::endl;
   std::cout << std::endl;
 }
 else{
@@ -205,3 +221,4 @@ return 0;
 //check if it gives the same int CHECK
 // turn into battlship CHECK
 // make it losable CHECK
+// make diagonal checks
