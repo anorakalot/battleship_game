@@ -102,18 +102,21 @@ checklist[randy_2] = 1;
 char play_again;
 // declare points variable
 int points = 0;
-
+int turns = 10;
 //main game loop until win or loss conditions are met
 //while (loop_controller){
 std::cout << "YOU HAVE 10 TRIES TO TRACK DOWN AND ELEIMINATE ENEMY SHIPS "<<std::endl;
 std::cout << std::endl;
 for(int i = 0; i <10;i++ ){
   int locator;
+  //new turn variable to show how many turns are left
+  --turns;
   std::cout << "LOCATION VALUE:  ";
   std::cin >> locator;
   //check if locator is to high
   if (locator>31){
-    std::cout << "VALUE IS TOO HIGH GENERAL "<< name <<std::endl;
+    std::cout << "VALUE IS TOO HIGH GENERAL "<< name <<std::endl<<std::endl;
+    std::cout << "NUMBER OF TURNS LEFT: "<<turns<<std::endl;
     board_values();
     continue;
   }
@@ -145,13 +148,15 @@ for(int i = 0; i <10;i++ ){
       //loop_controller = false;
     }
     else{
-      std::cout << "ONLY ONE SHIP REMAINS GENERAL "<<name<<std::endl;
+      std::cout << "ONLY ONE SHIP REMAINS GENERAL "<<name<<std::endl<<std::endl;
+      std::cout << "NUMBER OF TURNS LEFT: "<<turns<<std::endl;
       board_values();
     }
   }//end of if player hit ship
   else{
     if (myboard[locator] == "M"){
-      std::cout << "NO REPEAT VALUES"<<std::endl;
+      std::cout << "NO REPEAT VALUES"<<std::endl<<std::endl;
+      std::cout << "NUMBER OF TURNS LEFT: "<<turns<<std::endl;
       board_values();
       continue;//checks if locator value has been used before
     }
@@ -171,16 +176,20 @@ for(int i = 0; i <10;i++ ){
     //std::cout << "Point total: " << points <<std::endl;
     //sonar trigger for vertical enemy ship
     if ((checklist[locator+8]==1) || (checklist[locator-8]==1)){
-      std::cout << "SONAR DETECTED ENEMY SHIP" << std::endl;
+      std::cout << "SONAR DETECTED ENEMY SHIP" << std::endl<<std::endl;
+      std::cout << "NUMBER OF TURNS LEFT: "<<turns<<std::endl;
       board_values();
     }
     //sonar trigger for horizontal enemy ship
     else if ((checklist[locator+1] == 1) || (checklist[locator-1]==1)){
-      std::cout << "SONAR DETECTED ENEMY SHIP"<<std::endl;
+      std::cout << "SONAR DETECTED ENEMY SHIP"<<std::endl<<std::endl;
+      std::cout << "NUMBER OF TURNS LEFT: "<<turns<<std::endl;
+      std::cout << turns<<std::endl;
       board_values();
     }
     else{
       std::cout << "NO SONAR OF ENEMY SHIP"<<std::endl<<std::endl;
+      std::cout << "NUMBER OF TURNS LEFT: "<<turns<<std::endl;
       board_values();
       //NULL;
     }
